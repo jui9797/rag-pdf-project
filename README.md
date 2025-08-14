@@ -1,12 +1,10 @@
 # Rag PDF Project
 
-A modern Node.js backend service that allows users to upload PDF files, processes them asynchronously, stores semantic embeddings in a vector database, and provides AI-powered chat responses based on PDF content.
-
----
-
 ## Project Overview
 
-This project enables:
+A modern Node.js backend service that allows users to upload PDF files, processes them asynchronously, stores semantic embeddings in a vector database, and provides AI-powered chat responses based on PDF content.
+
+## Project Features
 
 - **PDF Upload:** Users upload PDF files via an API.
 - **Asynchronous Processing:** Background worker processes PDFs using BullMQ queue.
