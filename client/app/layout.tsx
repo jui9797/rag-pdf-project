@@ -7,6 +7,7 @@ import {
   SignedIn,
   SignUpButton,
   UserButton,
+  SignInButton,
 } from "@clerk/nextjs";
 import "./globals.css";
 
@@ -36,12 +37,33 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <section>
-            <SignedOut>
-              <SignUpButton />
-            </SignedOut>
-          </section>
-          <SignedIn>{children}</SignedIn>
+          <header className=" w-11/12 mx-auto flex justify-between items-center p-4 gap-4 h-16">
+            <span>
+              <h2 className="text-3xl font-bold">RAG PDF AI</h2>
+            </span>
+            <span className="flex gap-5">
+              <SignedOut>
+                <SignInButton>
+                  <button className="bg-[#ed47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton>
+                  <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                    Sign Up
+                  </button>
+                </SignUpButton>
+              </SignedOut>
+            </span>
+          </header>
+          <div>
+            <SignedIn>
+              <div className="border-green-400">
+                <UserButton />
+              </div>
+              {children}
+            </SignedIn>
+          </div>
         </body>
       </html>
     </ClerkProvider>
